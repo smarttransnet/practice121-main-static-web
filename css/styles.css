@@ -1,0 +1,364 @@
+/* Practice 121 - Static Site Styles */
+
+:root {
+  --teal: #3bb2b8;
+  --teal-dark: #2a9a9f;
+  --black: #000000;
+  --white: #ffffff;
+  --gray-light: #f5f5f5;
+  --gray-text: #333333;
+  --gray-muted: #666666;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  color: var(--gray-text);
+  line-height: 1.6;
+  background: var(--white);
+}
+
+h1, h2, h3, h4 {
+  font-family: "Playfair Display", serif;
+  font-weight: 400;
+}
+
+a {
+  color: var(--teal-dark);
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Top accent bar */
+.top-bar {
+  background: var(--teal);
+  height: 6px;
+  width: 100%;
+}
+
+/* Header / Navigation */
+.site-header {
+  position: absolute;
+  top: 6px;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  padding: 1.5rem 2rem;
+}
+
+.site-header .logo {
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  color: var(--white);
+  text-transform: uppercase;
+}
+
+.site-header .logo a {
+  color: var(--white);
+}
+
+.site-nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.site-nav a {
+  color: var(--white);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+
+.site-nav a:hover,
+.site-nav a.active {
+  opacity: 1;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+    url("../images/hero.jpg") center / cover no-repeat;
+  background-color: #4a7c59;
+}
+
+.hero-tagline {
+  text-align: center;
+  color: var(--white);
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 400;
+  padding: 0 1.5rem;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Contact Section */
+.contact-section {
+  background: var(--black);
+  color: var(--white);
+  padding: 4rem 2rem 5rem;
+  text-align: center;
+}
+
+.contact-section h2 {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  color: var(--white);
+  margin-bottom: 0.75rem;
+}
+
+.contact-divider {
+  width: 60px;
+  height: 2px;
+  background: var(--white);
+  margin: 0 auto 1.25rem;
+}
+
+.contact-subtitle {
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 2.5rem;
+  opacity: 0.95;
+}
+
+.contact-form {
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: transparent;
+  color: var(--white);
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.95rem;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--teal);
+}
+
+.contact-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.contact-form button {
+  padding: 0.875rem 2rem;
+  background: var(--teal);
+  color: var(--white);
+  border: none;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.contact-form button:hover {
+  background: var(--teal-dark);
+}
+
+.contact-info {
+  margin-top: 2rem;
+  font-size: 0.95rem;
+  opacity: 0.85;
+}
+
+.contact-info a {
+  color: var(--white);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Inner pages (Privacy, Terms) */
+.page-header {
+  background: var(--black);
+  color: var(--white);
+  padding: 3rem 2rem 2.5rem;
+  text-align: center;
+}
+
+.page-header .logo {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+.page-header .logo a {
+  color: var(--white);
+}
+
+.page-header h1 {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  margin-bottom: 0.5rem;
+}
+
+.page-header .updated {
+  font-size: 0.9rem;
+  opacity: 0.7;
+  font-family: "Montserrat", sans-serif;
+}
+
+.page-nav {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.page-nav a {
+  color: var(--white);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+.page-nav a:hover,
+.page-nav a.active {
+  opacity: 1;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.page-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 3rem 2rem 4rem;
+}
+
+.page-content h2 {
+  font-size: 1.35rem;
+  margin: 2rem 0 0.75rem;
+  color: var(--gray-text);
+}
+
+.page-content h2:first-child {
+  margin-top: 0;
+}
+
+.page-content p {
+  margin-bottom: 1rem;
+  color: var(--gray-muted);
+}
+
+.page-content ul {
+  margin: 0 0 1rem 1.5rem;
+  color: var(--gray-muted);
+}
+
+.page-content li {
+  margin-bottom: 0.5rem;
+}
+
+.page-content ol {
+  margin: 0 0 1rem 1.5rem;
+  color: var(--gray-muted);
+}
+
+.policy-divider {
+  border: none;
+  border-top: 2px solid #e0e0e0;
+  margin: 3rem 0;
+}
+
+.policy-document-title {
+  font-size: 1.75rem;
+  margin-top: 0;
+}
+
+/* Footer */
+.site-footer {
+  background: var(--gray-light);
+  padding: 2rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--gray-muted);
+}
+
+.site-footer nav {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.site-footer nav a {
+  color: var(--gray-text);
+  font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .site-header {
+    padding: 1rem;
+  }
+
+  .site-nav {
+    gap: 1rem;
+  }
+
+  .hero {
+    min-height: 60vh;
+  }
+
+  .contact-section {
+    padding: 3rem 1.25rem 4rem;
+  }
+}
