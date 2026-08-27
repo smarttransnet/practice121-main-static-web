@@ -5,53 +5,172 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Practice 121 - Your Health, Our Priority. Quality healthcare services you can trust.">
   <title>Practice 121 | Your Health, Our Priority</title>
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
   <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
-  <div class="top-bar"></div>
-
-  <header class="site-header">
-    <div class="logo"><a href="index.html">Practice 121</a></div>
-    <nav class="site-nav" aria-label="Main navigation">
+<body class="dark-theme">
+  
+  <!-- Ambient background elements -->
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  
+  <header class="site-header glass">
+    <div class="logo">
+      <a href="index.html">Practice <span>121</span></a>
+    </div>
+    
+    <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
+      <span class="sr-only">Menu</span>
+      <div class="hamburger"></div>
+    </button>
+    
+    <nav class="site-nav" id="primary-navigation" aria-label="Main navigation">
       <a href="index.html" class="active">Home</a>
       <a href="privacy-policy.html">Privacy Policy</a>
       <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
     </nav>
+    
+    <div class="header-actions">
+      <!-- Directing to Client-FE login URL. Using placeholder port 5173 which is Vite's default -->
+      <a href="http://localhost:5173/login" class="btn btn-outline">Login</a>
+      <a href="http://localhost:5173/signup" class="btn btn-primary">Sign Up</a>
+    </div>
   </header>
 
   <main>
     <section class="hero" aria-label="Welcome">
-      <h1 class="hero-tagline">Your Health, Our Priority</h1>
+      <div class="hero-content">
+        <span class="badge">Next-Gen Healthcare</span>
+        <h1 class="hero-title">Your Health, <br><span class="gradient-text">Our Priority</span></h1>
+        <p class="hero-subtitle">Experience seamless healthcare management with our ambient AI scribing, electronic patient records, and telehealth solutions tailored for modern practitioners.</p>
+        
+        <div class="hero-actions">
+          <a href="http://localhost:5173/signup" class="btn btn-primary btn-lg glow">Get Started Free</a>
+          <a href="#features" class="btn btn-secondary btn-lg">Explore Features</a>
+        </div>
+      </div>
+      
+      <div class="hero-visual">
+        <div class="glass-card visual-card float-anim">
+          <div class="visual-header">
+            <div class="dots"><span></span><span></span><span></span></div>
+            <div class="visual-title">AI Ambient Scribe Active</div>
+          </div>
+          <div class="visual-body">
+            <div class="audio-wave">
+              <span></span><span></span><span></span><span></span><span></span>
+            </div>
+            <p class="transcription-text">"Patient presents with mild fatigue and headaches over the past two weeks. Recommending a comprehensive metabolic panel..."</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="features-section">
+      <div class="section-header">
+        <h2>Intelligent Features for <span class="gradient-text">Modern Practices</span></h2>
+        <p>Everything you need to run your practice efficiently, securely, and seamlessly.</p>
+      </div>
+      
+      <div class="features-grid">
+        <div class="feature-card glass">
+          <div class="feature-icon">✨</div>
+          <h3>AI Ambient Scribing</h3>
+          <p>Automate your clinical notes in real-time. Our AI listens to your consultations and accurately drafts comprehensive EPR notes.</p>
+        </div>
+        
+        <div class="feature-card glass">
+          <div class="feature-icon">📁</div>
+          <h3>Smart EPR System</h3>
+          <p>Access and manage Electronic Patient Records effortlessly with an intuitive, secure, and blazing-fast interface.</p>
+        </div>
+        
+        <div class="feature-card glass">
+          <div class="feature-icon">💊</div>
+          <h3>E-Prescriptions</h3>
+          <p>Send prescriptions directly to integrated partner pharmacies digitally, reducing errors and saving time.</p>
+        </div>
+        
+        <div class="feature-card glass">
+          <div class="feature-icon">🩺</div>
+          <h3>Telehealth Portal</h3>
+          <p>Connect with your patients remotely through our high-definition, secure video consultation platform.</p>
+        </div>
+      </div>
     </section>
 
     <section class="contact-section" id="contact">
-      <h2>Contact Us</h2>
-      <div class="contact-divider"></div>
-      <p class="contact-subtitle">Drop us a line!</p>
-
-      <form class="contact-form" action="mailto:info@practice121.com" method="post" enctype="text/plain">
-        <input type="text" name="name" placeholder="Name" required aria-label="Your name">
-        <input type="email" name="email" placeholder="Email" required aria-label="Your email">
-        <textarea name="message" placeholder="Message" required aria-label="Your message"></textarea>
-        <button type="submit">Send Message</button>
-      </form>
-
-      <p class="contact-info">
-        Or email us directly at <a href="mailto:info@practice121.com">info@practice121.com</a>
-      </p>
+      <div class="contact-container glass">
+        <div class="contact-info">
+          <h2>Get in Touch</h2>
+          <p>Have questions about Practice 121? Drop us a line and our team will get back to you shortly.</p>
+          
+          <div class="contact-details">
+            <div class="contact-item">
+              <span class="icon">✉️</span>
+              <a href="mailto:info@practice121.com">info@practice121.com</a>
+            </div>
+            <div class="contact-item">
+              <span class="icon">📍</span>
+              <span>Colombo, Sri Lanka</span>
+            </div>
+          </div>
+        </div>
+        
+        <form class="contact-form" action="mailto:info@practice121.com" method="post" enctype="text/plain">
+          <div class="form-group">
+            <input type="text" name="name" placeholder="Full Name" required aria-label="Your name">
+          </div>
+          <div class="form-group">
+            <input type="email" name="email" placeholder="Email Address" required aria-label="Your email">
+          </div>
+          <div class="form-group">
+            <textarea name="message" placeholder="How can we help?" required aria-label="Your message"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary glow">Send Message</button>
+        </form>
+      </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <nav aria-label="Footer navigation">
-      <a href="index.html">Home</a>
-      <a href="privacy-policy.html">Privacy Policy</a>
-      <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
-    </nav>
-    <p>&copy; 2026 Practice 121. All rights reserved.</p>
+  <footer class="site-footer glass">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <div class="logo">Practice <span>121</span></div>
+        <p>Empowering healthcare professionals with state-of-the-art AI technology.</p>
+      </div>
+      
+      <div class="footer-links">
+        <h4>Legal</h4>
+        <nav aria-label="Footer navigation">
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
+        </nav>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2026 Practice 121 Pvt Ltd. All rights reserved.</p>
+    </div>
   </footer>
+
+  <script>
+    // Mobile navigation toggle
+    const navToggle = document.querySelector('.mobile-nav-toggle');
+    const nav = document.querySelector('.site-nav');
+    
+    if(navToggle) {
+      navToggle.addEventListener('click', () => {
+        const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+        navToggle.setAttribute('aria-expanded', !isExpanded);
+        navToggle.classList.toggle('active');
+        nav.classList.toggle('open');
+      });
+    }
+  </script>
 </body>
 </html>

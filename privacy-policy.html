@@ -7,22 +7,40 @@
   <title>Privacy Policy | Practice 121</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
-  <div class="top-bar"></div>
-
-  <header class="page-header">
-    <div class="logo"><a href="index.html">Practice 121</a></div>
-    <h1>Privacy Policy</h1>
-    <p class="updated">Effective Date: August 13, 2026</p>
-    <nav class="page-nav" aria-label="Main navigation">
+<body class="dark-theme">
+  
+  <!-- Ambient background elements -->
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  
+  <header class="site-header glass">
+    <div class="logo">
+      <a href="index.html">Practice <span>121</span></a>
+    </div>
+    
+    <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
+      <span class="sr-only">Menu</span>
+      <div class="hamburger"></div>
+    </button>
+    
+    <nav class="site-nav" id="primary-navigation" aria-label="Main navigation">
       <a href="index.html">Home</a>
       <a href="privacy-policy.html" class="active">Privacy Policy</a>
       <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
     </nav>
+    
+    <div class="header-actions">
+      <a href="http://localhost:5173/login" class="btn btn-outline">Login</a>
+      <a href="http://localhost:5173/signup" class="btn btn-primary">Sign Up</a>
+    </div>
   </header>
+    <div class="page-header">
+    <h1>Privacy Policy</h1>
+    <p class="updated">Effective Date: August 13, 2026</p>
+  </div>
 
   <main class="page-content">
     <p><strong>PRACTICE121 PVT LTD</strong></p>
@@ -126,13 +144,40 @@
     </p>
   </main>
 
-  <footer class="site-footer">
-    <nav aria-label="Footer navigation">
-      <a href="index.html">Home</a>
-      <a href="privacy-policy.html">Privacy Policy</a>
-      <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
-    </nav>
-    <p>&copy; 2026 Practice 121. All rights reserved.</p>
+  <footer class="site-footer glass">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <div class="logo">Practice <span>121</span></div>
+        <p>Empowering healthcare professionals with state-of-the-art AI technology.</p>
+      </div>
+      
+      <div class="footer-links">
+        <h4>Legal</h4>
+        <nav aria-label="Footer navigation">
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
+        </nav>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2026 Practice 121 Pvt Ltd. All rights reserved.</p>
+    </div>
   </footer>
+
+  <script>
+    // Mobile navigation toggle
+    const navToggle = document.querySelector('.mobile-nav-toggle');
+    const nav = document.querySelector('.site-nav');
+    
+    if(navToggle) {
+      navToggle.addEventListener('click', () => {
+        const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+        navToggle.setAttribute('aria-expanded', !isExpanded);
+        navToggle.classList.toggle('active');
+        nav.classList.toggle('open');
+      });
+    }
+  </script>
 </body>
 </html>
