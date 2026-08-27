@@ -14,3 +14,6 @@ desktop.ini
 .env.*
 *.pem
 *.key
+
+firebase-debug.log
+.vs/
