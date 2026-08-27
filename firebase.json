@@ -1,1 +1,26 @@
-{ "hosting": { "public": ".", "ignore": [ "firebase.json", "**/.*", "**/node_modules/**" ] } }
+﻿{
+  "hosting": {
+    "public": ".",
+    "ignore": [
+      "firebase.json",
+      ".firebaserc",
+      "firebase-debug.log",
+      "deploy-gcp.ps1",
+      "README.md",
+      ".vs/**",
+      "**/node_modules/**"
+    ],
+    "cleanUrls": true,
+    "trailingSlash": false,
+    "rewrites": [
+      {
+        "source": "/app",
+        "destination": "/login.html"
+      },
+      {
+        "source": "/app/**",
+        "destination": "/dashboard.html"
+      }
+    ]
+  }
+}
