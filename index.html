@@ -3,30 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Practice 121 - Your Health, Our Priority. Quality healthcare services you can trust.">
+  <meta name="description" content="Practice 121 - Sri Lanka's 1st Sinhala AI Medical Ambient Scribe & Complete Practice Management Platform. Fast, accurate clinical notes, e-prescriptions, and smart queue.">
   <meta name="robots" content="index, follow">
-  <title>Practice 121 | Your Health, Our Priority</title>
+  <title>Practice 121 | AI Ambient Scribe & Practice Management</title>
 
+  <!-- Google Fonts: Outfit -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
 <body>
 
-  <!-- Subtle ambient blobs -->
-  <div class="blob blob-1"></div>
-  <div class="blob blob-2"></div>
-  <div class="blob blob-3"></div>
+  <!-- Backdrop for Mobile Drawer -->
+  <div class="nav-backdrop" id="nav-backdrop" aria-hidden="true"></div>
 
+  <!-- Header -->
   <header class="site-header">
     <div class="header-inner">
       <div class="logo">
-        <a href="index.html">Practice<span>121</span></a>
+        <a href="index.html">
+          Practice<span>121</span>
+        </a>
       </div>
 
-      <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false" aria-label="Toggle navigation">
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>
@@ -34,230 +37,660 @@
 
       <nav class="site-nav" id="primary-navigation" aria-label="Main navigation">
         <a href="index.html" class="nav-link active">Home</a>
+        <a href="#ai-scribe" class="nav-link">AI Scribe</a>
+        <a href="#features" class="nav-link">Features</a>
+        <a href="#how-it-works" class="nav-link">How It Works</a>
+        <a href="#faq" class="nav-link">FAQ</a>
         <a href="privacy-policy.html" class="nav-link">Privacy Policy</a>
         <a href="terms-and-conditions.html" class="nav-link">Terms &amp; Conditions</a>
+        <div class="header-mobile-buttons">
+          <a href="/login" class="btn btn-outline btn-sm">Login</a>
+          <a href="/signup" class="btn btn-primary btn-sm">Create Clinic Free</a>
+        </div>
       </nav>
 
       <div class="header-actions">
-        <a href="/login" class="btn btn-outline" id="header-login-btn">Login</a>
-        <a href="/signup" class="btn btn-primary" id="header-signup-btn">Sign Up</a>
+        <a href="/login" class="btn btn-outline btn-sm" id="header-login-btn">Login</a>
+        <a href="/signup" class="btn btn-primary btn-sm" id="header-signup-btn">Create Clinic Free</a>
       </div>
     </div>
   </header>
 
   <main>
-    <!-- Hero -->
+    <!-- Hero Section -->
     <section class="hero" aria-label="Welcome to Practice 121">
-      <div class="hero-content">
-        <span class="badge">&#x2728; Next-Gen Healthcare Platform</span>
-        <h1 class="hero-title">Your Health,<br><span class="accent-text">Our Priority</span></h1>
-        <p class="hero-subtitle">
-          Seamless healthcare management with AI ambient scribing, electronic patient records,
-          and telehealth � built for modern practitioners.
-        </p>
-        <div class="hero-actions">
-          <a href="/signup" class="btn btn-primary btn-lg" id="hero-signup-btn">Get Started Free</a>
-          <a href="#features" class="btn btn-outline btn-lg" id="hero-features-btn">Explore Features</a>
+      <div class="container hero-grid">
+        
+        <div class="hero-content">
+          <div class="hero-kicker">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg>
+            <span>Sri Lanka's 1st Sinhala AI Medical Scribe</span>
+          </div>
+
+          <h1 class="hero-title">
+            Run Your Entire Clinic.<br>
+            <span class="accent-text">Zero Paperwork.</span>
+          </h1>
+
+          <p class="hero-subtitle">
+            Transform your phone or laptop into a complete smart clinic. Listen to consultations in Sinhala or English, auto-draft accurate SOAP notes in seconds, and send standard e-prescriptions straight to patient mobiles.
+          </p>
+
+          <div class="hero-actions">
+            <a href="/signup" class="btn btn-primary btn-lg" id="hero-signup-btn">
+              Create Your Clinic Free
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+            <a href="#ai-scribe" class="btn btn-outline btn-lg" id="hero-features-btn">Explore Features</a>
+          </div>
+
+          <div class="trust-strip">
+            <span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Works on Phone &amp; Laptop
+            </span>
+            <span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              No Extra Hardware or RAM
+            </span>
+            <span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              PDPA Fully Compliant
+            </span>
+          </div>
         </div>
-        <div class="trust-strip">
-          <span>&#x2713; No credit card required</span>
-          <span>&#x2713; GDPR Compliant</span>
-          <span>&#x2713; 14-day free trial</span>
+
+        <!-- Interactive Visual Mockup -->
+        <div class="hero-visual" aria-hidden="true">
+          
+          <div class="floating-stat-badge badge-top">
+            <div class="badge-icon-wrap">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+            <div>
+              <div class="badge-text-title">Sinhala Speech Engine</div>
+              <div class="badge-text-sub">Instant Clinical Translation</div>
+            </div>
+          </div>
+
+          <div class="scribe-card">
+            <div class="scribe-card-header">
+              <div class="scribe-status">
+                <div class="live-dot"></div>
+                <span>Ambient AI Scribe Active</span>
+              </div>
+              <div class="scribe-lang-pill">Sinhala + English</div>
+            </div>
+
+            <div class="scribe-card-body">
+              <div class="audio-bar-wrapper">
+                <div class="audio-bar-label">Natural Spoken Dialogue</div>
+                <div class="audio-transcript-snippet">
+                  "දින තුනක ඉඳන් තද උණ, ඇඟපත වේදනාව සහ කැස්ස පවතී. පැරසිටමෝල් ගත්තාට අඩු වුණේ නෑ..."
+                </div>
+              </div>
+
+              <div class="soap-preview">
+                <div class="soap-title">
+                  <span>Auto-Structured Clinical Note</span>
+                  <span style="color: #10B981; font-weight:700;">Ready in 2s ✓</span>
+                </div>
+                <div class="soap-item">
+                  <strong>Complaint:</strong> High-grade fever &amp; myalgia (3 days).
+                </div>
+                <div class="soap-item">
+                  <strong>Diagnosis:</strong> Acute Viral Infection (URTI).
+                </div>
+                <div class="soap-item">
+                  <strong>Plan:</strong> Rest, hydration, symptom relief.
+                </div>
+              </div>
+
+              <div class="rx-snippet">
+                <span>💊 Paracetamol 500mg TDS (3/7) + Cetirizine 10mg nocte</span>
+                <span style="color: var(--primary-dark); font-weight: 700;">Auto-matched</span>
+              </div>
+
+              <div class="scribe-actions-row">
+                <button class="btn btn-light btn-sm" type="button">Edit / Amend</button>
+                <button class="btn btn-primary btn-sm" type="button">📲 Send Rx to Patient Mobile</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="floating-stat-badge badge-bottom">
+            <div class="badge-icon-wrap" style="background:#D1FAE5; color:#059669;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div>
+              <div class="badge-text-title">Doctor in 100% Control</div>
+              <div class="badge-text-sub">Review &amp; Approve Any Note</div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Metrics Bar -->
+    <section class="metrics-section" aria-label="Key Platform Benefits">
+      <div class="container metrics-grid">
+        <div class="metric-item">
+          <div class="metric-num">3x</div>
+          <div class="metric-label">Faster Documentation</div>
+          <div class="metric-desc">Save hours of typing after every clinic session.</div>
+        </div>
+        <div class="metric-item">
+          <div class="metric-num">1st</div>
+          <div class="metric-label">Sinhala Ambient Scribe</div>
+          <div class="metric-desc">Trained on Sri Lankan medical terminology.</div>
+        </div>
+        <div class="metric-item">
+          <div class="metric-num">0 Extra</div>
+          <div class="metric-label">Hardware Needed</div>
+          <div class="metric-desc">Runs in your browser with zero device RAM drain.</div>
+        </div>
+        <div class="metric-item">
+          <div class="metric-num">100%</div>
+          <div class="metric-label">PDPA Compliant</div>
+          <div class="metric-desc">Bank-grade encryption protecting patient records.</div>
         </div>
       </div>
+    </section>
 
-      <div class="hero-visual" aria-hidden="true">
-        <div class="visual-card float-anim">
-          <div class="visual-header">
-            <div class="live-dot"></div>
-            <span>AI Ambient Scribe � Active</span>
-          </div>
-          <div class="visual-body">
-            <div class="audio-wave">
-              <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-            </div>
-            <p class="transcription-text">
-              "Patient presents with mild fatigue and headaches over the past two weeks.
-              Recommending a comprehensive metabolic panel..."
+    <!-- Feature Spotlight: Sinhala AI Ambient Scribe -->
+    <section id="ai-scribe" class="spotlight-section" aria-label="AI Ambient Scribe">
+      <div class="container spotlight-grid">
+        
+        <div class="spotlight-content">
+          <span class="section-tag">Breakthrough Innovation</span>
+          <h2>Sri Lanka's 1st Sinhala AI Ambient Medical Scribe</h2>
+          <p>
+            Never look away from your patient to type again. Keep Practice 121 open on your phone or laptop while you consult naturally. Our ambient AI records, translates, and drafts comprehensive clinical summaries instantly.
+          </p>
+
+          <ul class="spotlight-points">
+            <li class="spotlight-point">
+              <div class="spotlight-point-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <div class="spotlight-point-text">
+                <h4>Generates in Seconds</h4>
+                <p>Instant SOAP notes and treatment outlines generated before the patient even stands up.</p>
+              </div>
+            </li>
+            <li class="spotlight-point">
+              <div class="spotlight-point-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <div class="spotlight-point-text">
+                <h4>Precise, Accurate &amp; No Jargon</h4>
+                <p>Clean, concise, and standard medical terminology ready for professional records.</p>
+              </div>
+            </li>
+            <li class="spotlight-point">
+              <div class="spotlight-point-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <div class="spotlight-point-text">
+                <h4>Full Clinician Control</h4>
+                <p>Review, amend, and edit every note and prescription line with full autonomy.</p>
+              </div>
+            </li>
+            <li class="spotlight-point">
+              <div class="spotlight-point-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <div class="spotlight-point-text">
+                <h4>Cloud-Powered (Zero Local Memory Usage)</h4>
+                <p>Does not consume your phone storage or slow down your device.</p>
+              </div>
+            </li>
+          </ul>
+
+          <a href="/signup" class="btn btn-primary">Try Sinhala Scribing Free</a>
+        </div>
+
+        <div class="spotlight-box">
+          <div class="spotlight-box-card">
+            <div class="card-mini-title">1. Natural Spoken Dialogue</div>
+            <p style="font-size:0.92rem; color:var(--text-secondary); margin-bottom:0.5rem;">
+              "ඩොක්ටර්, දවස් 3ක ඉඳලා බඩේ කැක්කුමයි වමනෙයි තියෙනවා..."
             </p>
-            <div class="tags-row">
-              <span class="tag">Consultation</span>
-              <span class="tag">Auto-drafted</span>
-              <span class="tag">Saved &#x2713;</span>
-            </div>
+            <span class="scribe-lang-pill">Sinhala &bull; Dual Channel Audio</span>
+          </div>
+
+          <div class="spotlight-box-card">
+            <div class="card-mini-title">2. AI Ambient Structuring</div>
+            <p style="font-size:0.92rem; color:var(--text-primary); font-weight:600; margin-bottom:0.25rem;">
+              • Gastroenteritis / Dyspepsia
+            </p>
+            <p style="font-size:0.86rem; color:var(--text-secondary); margin-bottom:0;">
+              Omeprazole 20mg bd, Domperidone 10mg TDS, ORS sachets.
+            </p>
+          </div>
+
+          <div class="spotlight-box-card" style="background:var(--primary-xlight); border-color:var(--border-teal);">
+            <div class="card-mini-title" style="color:var(--primary-dark);">3. Immediate E-Prescription Delivery</div>
+            <p style="font-size:0.88rem; color:var(--text-primary); margin-bottom:0;">
+              Dispatched directly to patient mobile phone with 1 tap.
+            </p>
           </div>
         </div>
 
-        <div class="stat-card stat-card-1">
-          <div class="stat-num">98%</div>
-          <div class="stat-label">Transcription Accuracy</div>
+      </div>
+    </section>
+
+    <!-- Full Features Grid -->
+    <section id="features" class="features-section" aria-label="Platform Features">
+      <div class="container">
+        
+        <div class="section-header">
+          <span class="section-tag">All-In-One Clinic Platform</span>
+          <h2>Everything Your Practice Needs</h2>
+          <p>Simple, modern tools designed specifically for clinicians — not complicated administrative software.</p>
         </div>
-        <div class="stat-card stat-card-2">
-          <div class="stat-num">3x</div>
-          <div class="stat-label">Faster Documentation</div>
+
+        <div class="features-grid">
+          
+          <!-- Card 1: Public Profile -->
+          <div class="feature-card">
+            <div class="feature-icon-wrap">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <h3>Public Profile &amp; Online Clinic</h3>
+            <p>Establish public visibility with your branded doctor profile. Share your qualifications, clinic locations, and consulting hours so patients can find and book you easily.</p>
+          </div>
+
+          <!-- Card 2: Booking & Queue -->
+          <div class="feature-card">
+            <div class="feature-icon-wrap">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+            </div>
+            <h3>Web &amp; Front-Door QR Booking</h3>
+            <p>Accept online appointments and let walk-in patients scan a QR code at your clinic entrance to join a live, transparent digital waiting queue.</p>
+          </div>
+
+          <!-- Card 3: Patient Register & Calendar -->
+          <div class="feature-card">
+            <div class="feature-icon-wrap">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h3>Patient Queue &amp; Calendar</h3>
+            <p>Register new patients in seconds. Keep your daily schedule organized, manage patient flow effortlessly, and prevent waiting room overcrowding.</p>
+          </div>
+
+          <!-- Card 4: Standard E-Prescriptions -->
+          <div class="feature-card">
+            <div class="feature-icon-wrap">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"/><path d="m8.5 8.5 7 7"/></svg>
+            </div>
+            <h3>Standard E-Prescriptions to Mobile</h3>
+            <p>Generate clean, standardized digital prescriptions and send them instantly to the patient’s mobile phone. Legible, secure, and accepted by pharmacies.</p>
+          </div>
+
+          <!-- Card 5: Favourite Medications -->
+          <div class="feature-card">
+            <div class="feature-icon-wrap">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <h3>Favourite Medications Quick-List</h3>
+            <p>Save your most frequently prescribed drugs, dosages, and instructions to a personalized favorite list for rapid 1-tap prescription creation.</p>
+          </div>
+
+          <!-- Card 6: Electronic Medical Records -->
+          <div class="feature-card">
+            <div class="feature-icon-wrap">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" x2="8" y1="13" y2="13"/><line x1="16" x2="8" y1="17" y2="17"/></svg>
+            </div>
+            <h3>Anywhere Medical Records (EMR)</h3>
+            <p>Access complete patient notes, past visits, and treatment histories 24/7 from your phone or laptop. Fast, organized, and securely archived in the cloud.</p>
+          </div>
+
+          <!-- Card 7: Telehealth & Payments -->
+          <div class="feature-card">
+            <div class="feature-icon-wrap">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect width="15" height="14" x="1" y="5" rx="2" ry="2"/></svg>
+            </div>
+            <h3>Telehealth &amp; Payment Gateway</h3>
+            <p>Consult with remote patients through high-definition, encrypted video calls and accept consultation fees seamlessly via an integrated payment gateway.</p>
+          </div>
+
+          <!-- Card 8: Practice Analytics -->
+          <div class="feature-card">
+            <div class="feature-icon-wrap">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" x2="18" y1="20" y2="10"/><line x1="12" x2="12" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="14"/></svg>
+            </div>
+            <h3>Performance Statistics &amp; Insights</h3>
+            <p>Gain valuable insights into your practice with real-time statistics on patient volume, peak consultation hours, and revenue metrics.</p>
+          </div>
+
+          <!-- Card 9: No Hardware Lock-in -->
+          <div class="feature-card">
+            <div class="feature-icon-wrap">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><line x1="12" x2="12.01" y1="18" y2="18"/></svg>
+            </div>
+            <h3>Phone &amp; Laptop Ready</h3>
+            <p>Runs smoothly on your existing smartphone, tablet, or PC browser. No expensive specialized devices, servers, or memory burdens.</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="how-section" aria-label="How it works">
+      <div class="container">
+        
+        <div class="section-header">
+          <span class="section-tag">Simple 3-Step Workflow</span>
+          <h2>How Practice 121 Works For Doctors</h2>
+          <p>Designed to fit into your natural clinical routine with zero learning curve.</p>
+        </div>
+
+        <div class="steps-grid">
+          
+          <div class="step-card">
+            <div class="step-number">1</div>
+            <h3>Open on Phone or Laptop</h3>
+            <p>Log in from any device. View your live digital queue, register walk-in patients via QR code, and start your consultation session in one tap.</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">2</div>
+            <h3>Consult &amp; Review Note</h3>
+            <p>Speak naturally with your patient in Sinhala or English. Our AI ambient scribe structures the clinical note and medication draft in seconds for your instant review.</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">3</div>
+            <h3>Send Rx to Patient Mobile</h3>
+            <p>Approve the prescription with a tap. The patient immediately receives the digital prescription on their phone, while the record is archived in your secure cloud vault.</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Security & PDPA Compliance -->
+    <section class="security-section" aria-label="Data Protection and Compliance">
+      <div class="container">
+        <div class="security-card">
+          
+          <div>
+            <span class="section-tag" style="background:#D1FAE5; color:#059669;">Healthcare Security</span>
+            <h2>Fully Compliant with Sri Lanka PDPA</h2>
+            <p>
+              Your medical practice and patient health data are protected with strict compliance to Sri Lanka’s Personal Data Protection Act (PDPA No. 9 of 2022) and international healthcare security best practices.
+            </p>
+            <div class="security-badge-grid">
+              <div class="sec-badge-item">
+                <h4>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#007A87" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                  AES-256 Encryption
+                </h4>
+                <p>All clinical notes, audio, and patient records are encrypted in transit and at rest.</p>
+              </div>
+
+              <div class="sec-badge-item">
+                <h4>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#007A87" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                  Doctor Data Ownership
+                </h4>
+                <p>You retain 100% control and ownership over all your patient records and clinical data.</p>
+              </div>
+            </div>
+          </div>
+
+          <div style="background:var(--primary-xlight); border-radius:var(--radius-lg); padding:2rem; text-align:center;">
+            <div style="width:64px; height:64px; background:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 1rem; color:var(--primary); box-shadow:var(--shadow-sm);">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            </div>
+            <h3 style="font-size:1.25rem; margin-bottom:0.5rem; color:var(--primary-deep);">Protected &amp; Reliable</h3>
+            <p style="font-size:0.92rem; color:var(--text-secondary); margin-bottom:1.25rem;">
+              Secure cloud infrastructure ensuring 99.9% uptime and immediate record retrieval whenever you need it.
+            </p>
+            <a href="privacy-policy.html" class="btn btn-primary btn-sm">Read Our Privacy Policy</a>
+          </div>
+
         </div>
       </div>
     </section>
 
-    <!-- Features -->
-    <section id="features" class="features-section">
-      <div class="section-header">
-        <span class="section-tag">Features</span>
-        <h2>Everything Your Practice Needs</h2>
-        <p>Powerful tools designed for clinicians, not administrators.</p>
+    <!-- FAQ Section -->
+    <section id="faq" class="faq-section" aria-label="Frequently Asked Questions">
+      <div class="container">
+        
+        <div class="section-header">
+          <span class="section-tag">Got Questions?</span>
+          <h2>Frequently Asked Questions</h2>
+          <p>Everything you need to know about setting up Practice 121 for your clinic.</p>
+        </div>
+
+        <div class="faq-container">
+          
+          <details class="faq-item" open>
+            <summary class="faq-question">
+              <span>How does the Sinhala AI Medical Scribe work?</span>
+              <span class="faq-icon">+</span>
+            </summary>
+            <div class="faq-answer">
+              Keep Practice 121 open on your smartphone or laptop while you consult. The ambient AI listens to the natural dialogue in Sinhala or English, converts clinical details into standardized SOAP notes, and generates prescription suggestions in seconds.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span>Do I need to buy special microphones or high-end laptops?</span>
+              <span class="faq-icon">+</span>
+            </summary>
+            <div class="faq-answer">
+              No special equipment is needed. Practice 121 runs entirely through your existing web browser on any standard smartphone, tablet, or laptop. It does not burden your device storage or memory (RAM).
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span>Can I edit and amend notes and prescriptions before sending?</span>
+              <span class="faq-icon">+</span>
+            </summary>
+            <div class="faq-answer">
+              Yes, absolutely. The doctor has 100% control. You can review, modify dosages, add items from your favorite medication list, and approve every record before it is finalized or dispatched.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span>How do patients receive their prescriptions?</span>
+              <span class="faq-icon">+</span>
+            </summary>
+            <div class="faq-answer">
+              Once you approve the prescription, an instant digital prescription link is dispatched directly to the patient's mobile phone via SMS or web link, which can be presented at any pharmacy.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span>Can walk-in patients join the queue without booking online?</span>
+              <span class="faq-icon">+</span>
+            </summary>
+            <div class="faq-answer">
+              Yes. You can place a QR code at your clinic front door. Walk-in patients can scan it with their phone camera to register and join your live queue, or you can register them at the desk in seconds.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span>Is patient health data secure and compliant with Sri Lankan laws?</span>
+              <span class="faq-icon">+</span>
+            </summary>
+            <div class="faq-answer">
+              Yes. Practice 121 is fully compliant with Sri Lanka's Personal Data Protection Act (PDPA No. 9 of 2022). All communications and records are protected using bank-grade AES-256 encryption.
+            </div>
+          </details>
+
+        </div>
+
       </div>
+    </section>
 
-      <div class="features-grid">
-        <div class="feature-card" id="feature-ai-scribe">
-          <div class="feature-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg>
-          </div>
-          <h3>AI Ambient Scribing</h3>
-          <p>Automate clinical notes in real-time. Our AI listens to your consultations and drafts comprehensive EPR notes instantly.</p>
-        </div>
-
-        <div class="feature-card" id="feature-epr">
-          <div class="feature-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" x2="8" y1="13" y2="13"/><line x1="16" x2="8" y1="17" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-          </div>
-          <h3>Smart EPR System</h3>
-          <p>Access and manage Electronic Patient Records effortlessly with a secure, intuitive, and blazing-fast interface.</p>
-        </div>
-
-        <div class="feature-card" id="feature-eprescription">
-          <div class="feature-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
-          </div>
-          <h3>E-Prescriptions</h3>
-          <p>Send prescriptions directly to partner pharmacies digitally, reducing errors and saving precious consultation time.</p>
-        </div>
-
-        <div class="feature-card" id="feature-telehealth">
-          <div class="feature-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect width="15" height="14" x="1" y="5" rx="2" ry="2"/></svg>
-          </div>
-          <h3>Telehealth Portal</h3>
-          <p>Connect with patients remotely through our high-definition, secure video consultation platform.</p>
+    <!-- Call to Action Banner -->
+    <section class="cta-section" aria-label="Get Started">
+      <div class="container">
+        <div class="cta-banner">
+          <h2>Ready to Modernize Your Practice?</h2>
+          <p>
+            Join doctors across Sri Lanka saving hours every day on paperwork, queue management, and documentation.
+          </p>
+          <a href="/signup" class="btn btn-light" id="cta-signup-btn">
+            Create Your Clinic Free
+          </a>
         </div>
       </div>
     </section>
 
-    <!-- CTA Banner -->
-    <section class="cta-section" aria-label="Call to action">
-      <div class="cta-inner">
-        <h2>Ready to Transform Your Practice?</h2>
-        <p>Join thousands of healthcare professionals already using Practice 121.</p>
-        <a href="/signup" class="btn btn-primary btn-lg" id="cta-signup-btn">Start Your Free Trial</a>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section class="contact-section" id="contact">
-      <div class="section-header">
-        <span class="section-tag">Contact</span>
-        <h2>Get in Touch</h2>
-        <p>Questions? Our team is here to help.</p>
-      </div>
-
-      <div class="contact-container">
-        <div class="contact-info">
-          <div class="contact-item">
-            <div class="contact-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-            </div>
-            <div>
-              <div class="contact-label">Email Us</div>
-              <a href="mailto:info@practice121.com">info@practice121.com</a>
-            </div>
-          </div>
-
-          <div class="contact-item">
-            <div class="contact-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-            </div>
-            <div>
-              <div class="contact-label">Location</div>
-              <span>Colombo, Sri Lanka</span>
-            </div>
-          </div>
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact" aria-label="Contact Us">
+      <div class="container">
+        
+        <div class="section-header">
+          <span class="section-tag">Get in Touch</span>
+          <h2>We're Here to Help</h2>
+          <p>Have questions about setting up your clinic or using the Sinhala AI Scribe? Contact our team.</p>
         </div>
 
-        <form class="contact-form" action="mailto:info@practice121.com" method="post" enctype="text/plain">
-          <div class="form-group">
-            <label for="contact-name" class="sr-only">Full Name</label>
-            <input type="text" id="contact-name" name="name" placeholder="Full Name" required>
+        <div class="contact-container">
+          <div class="contact-info">
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              </div>
+              <div>
+                <div class="contact-label">Email Us</div>
+                <a href="mailto:info@practice121.com">info@practice121.com</a>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div>
+                <div class="contact-label">Headquarters</div>
+                <span>Colombo, Sri Lanka</span>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <div>
+                <div class="contact-label">Data Privacy</div>
+                <span>PDPA Certified &bull; Encrypted</span>
+              </div>
+            </div>
           </div>
-          <div class="form-group">
-            <label for="contact-email" class="sr-only">Email Address</label>
-            <input type="email" id="contact-email" name="email" placeholder="Email Address" required>
-          </div>
-          <div class="form-group">
-            <label for="contact-message" class="sr-only">Message</label>
-            <textarea id="contact-message" name="message" placeholder="How can we help?" required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary" id="contact-submit-btn">Send Message</button>
-        </form>
+
+          <form class="contact-form" action="mailto:info@practice121.com" method="post" enctype="text/plain">
+            <div class="form-group">
+              <label for="contact-name" class="sr-only">Full Name</label>
+              <input type="text" id="contact-name" name="name" placeholder="Doctor / Clinic Name" required>
+            </div>
+            <div class="form-group">
+              <label for="contact-email" class="sr-only">Email Address</label>
+              <input type="email" id="contact-email" name="email" placeholder="Email Address" required>
+            </div>
+            <div class="form-group">
+              <label for="contact-message" class="sr-only">Message</label>
+              <textarea id="contact-message" name="message" placeholder="How can we help your practice?" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" id="contact-submit-btn">Send Inquiry</button>
+          </form>
+        </div>
+
       </div>
     </section>
   </main>
 
+  <!-- Footer -->
   <footer class="site-footer">
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <div class="logo"><a href="index.html">Practice<span>121</span></a></div>
-        <p>Empowering healthcare professionals with AI-powered technology.</p>
+    <div class="container">
+      
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="logo"><a href="index.html">Practice<span>121</span></a></div>
+          <p>
+            Next-generation smart clinic management &amp; Sri Lanka's 1st Sinhala AI Medical Ambient Scribe.
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <h4>Legal &amp; Compliance</h4>
+          <nav aria-label="Legal navigation">
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
+          </nav>
+        </div>
+
+        <div class="footer-links">
+          <h4>Clinician Portal</h4>
+          <nav aria-label="Platform navigation">
+            <a href="/login" id="footer-login-link">Doctor Login</a>
+            <a href="/signup" id="footer-signup-link">Create Free Clinic</a>
+          </nav>
+        </div>
       </div>
 
-      <div class="footer-links">
-        <h4>Legal</h4>
-        <nav aria-label="Footer navigation">
-          <a href="privacy-policy.html">Privacy Policy</a>
-          <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
-        </nav>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Practice 121 Pvt Ltd. All rights reserved.</p>
+        <p>Colombo, Sri Lanka &bull; PDPA Compliant</p>
       </div>
 
-      <div class="footer-links">
-        <h4>Platform</h4>
-        <nav>
-          <a href="/login" id="footer-login-link">Login</a>
-          <a href="/signup" id="footer-signup-link">Sign Up</a>
-        </nav>
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      <p>&copy; 2026 Practice 121 Pvt Ltd. All rights reserved.</p>
     </div>
   </footer>
 
+  <!-- Script for Mobile Drawer and Smooth Navigation -->
   <script>
     // Mobile navigation toggle
-    const navToggle = document.querySelector('.mobile-nav-toggle');
-    const nav = document.querySelector('.site-nav');
-    if (navToggle) {
-      navToggle.addEventListener('click', () => {
-        const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
-        navToggle.setAttribute('aria-expanded', String(!isExpanded));
-        navToggle.classList.toggle('open');
-        nav.classList.toggle('open');
-      });
+    const navToggle = document.getElementById('mobile-nav-toggle');
+    const siteNav = document.getElementById('primary-navigation');
+    const navBackdrop = document.getElementById('nav-backdrop');
+
+    function toggleMenu() {
+      const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', String(!isExpanded));
+      navToggle.classList.toggle('open');
+      siteNav.classList.toggle('open');
+      navBackdrop.classList.toggle('active');
+      document.body.style.overflow = isExpanded ? '' : 'hidden';
     }
 
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          e.preventDefault();
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (navToggle) {
+      navToggle.addEventListener('click', toggleMenu);
+    }
+    if (navBackdrop) {
+      navBackdrop.addEventListener('click', toggleMenu);
+    }
+
+    // Close menu when clicking any nav link
+    document.querySelectorAll('.site-nav a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (siteNav.classList.contains('open')) {
+          toggleMenu();
         }
       });
     });
 
-    // Header scroll effect
+    // Header scroll shadow effect
     const header = document.querySelector('.site-header');
     window.addEventListener('scroll', () => {
-      header.classList.toggle('scrolled', window.scrollY > 20);
+      if (header) {
+        header.classList.toggle('scrolled', window.scrollY > 15);
+      }
     });
   </script>
 </body>
